@@ -1,0 +1,58 @@
+.outerdiv {
+    border: 1px solid black;
+    height: 250px;
+    width: 40%;
+    text-align: center;
+    margin-top: 150px;
+    margin-left: 150px;
+    background-color: grey;
+}
+.outer{
+    display: flex;
+}
+
+.lbl {
+    font-weight: bold;
+}
+
+.lbl2 {
+    font-weight: bold;
+}
+
+
+.btn {
+    font-weight: bold;
+}
+
+.sidebar {
+    height: 670px;
+    width: 200px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 40px;
+    background-color: #484747;
+
+
+}
+
+.sidebar a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    color: white;
+}
+
+.inner-div {
+    width: 100%;
+    height: 700px;
+    background-color: grey;
+
+}
+
+.active{
+    color: #f1f1f1;
+}

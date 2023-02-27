@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="outerdiv">
+            <h1>Signup</h1><br>
+            <label for="" class="lbl">Username</label>            
+            <input type="text" name="uname" class="txt1" id="admintxt"><br><br>
+           
+            <label for="" class="lbl2">Password</label>
+           
+            <input type="password" class="txt2" id="passwrd" name="password"><br><br>
+            <b style="color: red;" id="error"></b><br>
+            {% for message in messages %}
+                {{ message}}
+            {% endfor %}
+            
+            <button type="submit" class="btn" >Signup</button><br>         
+
+        </div>
+    </form>
+</body>
+</html>

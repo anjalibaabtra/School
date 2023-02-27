@@ -1,0 +1,28 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/loginstyles.css' %}">
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="sidebar">
+            <!-- <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p> -->
+
+            <a href="registerStudents">Register Student</a>
+            <a class="active" href="viewactiveStudents">View Active Students</a>
+        </div>
+        <div class="inner-div">
+            View Students
+        </div>
+    </div>
+
+</body>
+
+</html>

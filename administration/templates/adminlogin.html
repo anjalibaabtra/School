@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{% static 'styles/loginstyles.css' %}">
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="outerdiv">
+            <h1>Login</h1><br>
+            <label for="" class="lbl">Username</label>            
+            <input type="text" name="uname" class="txt1" id="admintxt"><br><br>
+           
+            <label for="" class="lbl2">Password</label>
+           
+            <input type="password" class="txt2" id="passwrd" name="password"><br><br>
+            <b style="color: red;" id="error"></b><br>
+            {% for message in messages %}
+                {{ message}}
+            {% endfor %}
+            
+            <button type="submit" class="btn" >Login</button><br> 
+            <a href="adminSignup">Signup</a>        
+
+        </div>
+       
+    </form>
+
+    <script>        
+   
+
+
+function loginCheck() {
+    username = document.getElementById('admintxt').value
+    password = document.getElementById('passwrd').value
+
+    status = 1
+
+    if (username == '') {
+        document.getElementById('error').innerHTML = "Please Enter Username"
+        status = 0
+
+    } else if (username == 'anjalianjup10@gmail.com') {
+        status = 1
+        document.getElementById('error').innerHTML = " "
+
+    } else {
+        document.getElementById('error').innerHTML = "Username Incorrect"
+        status = 0
+    }
+
+
+
+    if (status == 1) {
+
+        if (password == '') {
+            document.getElementById('error').innerHTML = "Please Enter Password"
+
+        } else if (password == 'admin') {
+            document.getElementById('error').innerHTML = " "
+            document.getElementById('usertxt').value = ''
+            document.getElementById('passwrd').value = ''
+            // window.location.replace("dashboard");
+
+        } else {
+            document.getElementById('error').innerHTML = "Password Incorrect"
+
+        }
+
+
+
+    } else {
+
+    }
+    console.log(status)
+
+}
+
+
+</script>
+    </script>
+    
+</body>
+</html>
