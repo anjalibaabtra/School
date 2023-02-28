@@ -19,13 +19,13 @@
             <div class="sidebar">
                 <!-- <p style="color: white; margin-left: 20px;">Hello,  {{user.username}}</p> -->
 
-                <a class="active" href="registerStudents">Register Student</a>
-                <a href="viewactiveStudents">View Active Students</a>
+                <!-- <a href="registerStudents">Register Student</a> -->
+                <a href="updateProfile?value={{user.username}}">Update Students Profile</a>
                 <div style="padding-top: 250px;"><a href="logout">Logout</a></div>
             </div>
             <div class="in-main">
                 <div style="position: relative; text-align: center;">
-                    <h1><u>Register Student</u></h1>
+                    <h1><u>Update Student Profile</u></h1>
                 </div>
                 <div style="margin: auto; width: 50%; display: flex;  text-align:center; height: 350px;">
                     <div class="inner-div1">
@@ -35,24 +35,23 @@
                         <label for="">Email</label><br><br>
                         <label for="">Username</label><br><br>
                         <label for="">Password</label><br><br>
-                        <label for="">Confirm Password</label><br><br>
                     </div>
                     <div class="inner-div2">
-                        <input type="text" name="name" id="name" ><br><br>
-                        <input type="number" name="contact" id="contact"><br><br>
-                        <input type="email" name="email" id="email"><br><br>
-                        <input type="text" name="uname" id="uname"><br><br>
+                        {% for student in students %}
+                        <input type="text" name="name" id="name" value="{{student.Name}}"><br><br>
+                        <input type="number" name="contact" id="contact" value="{{student.Contact}}"><br><br>
+                        <input type="email" name="email" id="email" value="{{student.Email}}"><br><br>
+                        <input type="text" name="uname" id="uname" value="{{student.Username}}"><br><br>
                         <input type="password" name="password" id="password"><br><br>
-                        <input type="password" id="confirm_password"><br><br>
-
+                        {% endfor %}
                     </div>
 
                 </div>
                 {% for message in messages %}
-                  {{ message}}
+                {{ message}}
                 {% endfor %}
                 <div><b style="color: red;" id="error"></b><br></div>
-                <button type="submit" class="btn1" onclick='return check()'>Add Student</button>
+                <button type="submit" class="btn1" onclick='return check()'>Update Student</button>
             </div>
 
         </div>
@@ -88,6 +87,16 @@
 
 
         }
+    </script>
+
+    <script type="text/javascript">
+        function preventBack() {
+            window.history.forward();
+        }
+
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
     </script>
 
 

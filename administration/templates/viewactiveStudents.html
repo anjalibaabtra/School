@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/loginstyles.css' %}">
     <title>Admin Dashboard</title>
+    <script type="text/javascript"></script>
 </head>
 
 <body>
@@ -17,12 +18,59 @@
 
             <a href="registerStudents">Register Student</a>
             <a class="active" href="viewactiveStudents">View Active Students</a>
+            <div style="padding-top: 250px;"><a href="logout">Logout</a></div>
         </div>
         <div class="inner-div">
-            View Students
+
+            <div style="position: relative; text-align: center;">
+                <h1><u>View Active/Inactive Students</u></h1>
+            </div>
+            <div class="table_div">
+                <table class="outertable">
+                    <thead>
+                        <tr>
+                            <th colspan="3" style="background-color:rgb(97, 118, 249);" class="th1"> Students</th>
+                        </tr>
+                        <tr class="tr2">
+                            <th class="table">Name</th>
+                            <th class="table">Username</th>
+                            <th class="table">Active/Inactive</th>
+                            <!-- <th class="table">Fee</th> -->
+                        </tr>
+                    </thead>
+                    {% for student in students %}
+                    <tr align="center">
+                        <td>{{student.Name}}</td>
+                        <td onshow="check()">{{student.Username}}</td>
+                        <!-- <td>{{student.active}}</td> -->
+                        <!-- <td><a href="" id="act" ></a></td> -->
+                        <td><b style="color: red;" id="error"></b></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+
+
+
         </div>
     </div>
 
+
+    <script>
+        function check() {
+            len = students.length;
+            for (i = 0; i < len; i++) {
+                if (student.active == True) {
+                    document.getElementById('error').innerHTML = "Active";
+                    console.log('how')
+                } else {
+                    document.getElementById('error').innerHTML = "InActive";
+                    console.log('hai')
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
