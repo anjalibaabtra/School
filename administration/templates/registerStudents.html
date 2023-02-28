@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <form action="" method="post">
+    <form onsubmit="return check()" action="" method="post">
         {% csrf_token %}
         <div class="outer">
 
@@ -52,7 +52,7 @@
                   {{ message}}
                 {% endfor %}
                 <div><b style="color: red;" id="error"></b><br></div>
-                <button type="submit" class="btn1" onclick='return check()'>Add Student</button>
+                <button type="submit" class="btn1" >Add Student</button>
             </div>
 
         </div>
@@ -70,17 +70,22 @@
             // Error = document.getElementById('error')
             if (Name == "") {
                 document.getElementById('error').innerHTML = "Please enter the Name !"
-                return true
+                return false
             } else if (Contact == "") {
                 document.getElementById('error').innerHTML = "Please enter the Contact !"
+                return false
             } else if (Email == "") {
                 document.getElementById('error').innerHTML = "Please enter the Email !"
+                return false
             } else if (Uname == "") {
                 document.getElementById('error').innerHTML = "Please enter the Username !"
+                return false
             } else if (Password == "") {
                 document.getElementById('error').innerHTML = "Please enter the Password !"
+                return false
             } else if (Password != Confirm_password) {
                 document.getElementById('error').innerHTML = "Password and Confirm Password Not Same !"
+                return false
             } else {
                 document.getElementById('error').innerHTML = " "
                 return true

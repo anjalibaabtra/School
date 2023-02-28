@@ -41,10 +41,10 @@
                     {% for student in students %}
                     <tr align="center">
                         <td>{{student.Name}}</td>
-                        <td onshow="check()">{{student.Username}}</td>
+                        <td >{{student.Username}}</td>
                         <!-- <td>{{student.active}}</td> -->
                         <!-- <td><a href="" id="act" ></a></td> -->
-                        <td><b style="color: red;" id="error"></b></td>
+                        <!-- <td><b style="color: red;" id="error"></b></td> -->
                     </tr>
                     {% endfor %}
                 </table>
@@ -57,7 +57,7 @@
     </div>
 
 
-    <script>
+    <!-- <script>
         function check() {
             len = students.length;
             for (i = 0; i < len; i++) {
@@ -70,7 +70,7 @@
                 }
             }
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
